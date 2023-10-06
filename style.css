@@ -1,0 +1,61 @@
+/* Progress bar */
+
+/* Set the body to display flex, center its content horizontally and vertically, set its height to 100% of the viewport height, remove any margin, and set the background color to black */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+}
+
+.logo-container {
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    background-color: black;
+    transition: opacity 0.25s ease-out;
+}
+
+.logo-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: auto;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5) and (min-resolution: 144dpi) and (min-width: 1280px) {
+    .logo-container img {
+        width: 70px;
+    }
+}
+
+@media (min-width: 370px) and (max-width: 900) and (-webkit-device-pixel-ratio: 2) {
+    .logo-container img {
+        width: 120px;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s cubic-bezier(0.25, 0.15, 0.25, 1) forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
